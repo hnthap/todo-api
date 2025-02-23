@@ -42,6 +42,7 @@ h1 {
     <img alt="mysql" src="https://img.shields.io/badge/-MySQL-003B57?style=flat-square&logo=mysql&logoColor=white" />
     <img alt="express" src="https://img.shields.io/badge/-ExpressJS-gray?style=flat-square&logo=Express&logoColor=white" />
     <img alt="typescript" src="https://img.shields.io/badge/-TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white" />
+    <a href="https://roadmap.sh/projects/todo-list-api"><img alt="A Roadmap.sh project" src="https://img.shields.io/badge/-Roadmap.sh_Project-default?style=flat-square&logo=roadmap.sh&logoColor=while" /></a>
 </div>
 
 <!-- <img class="right-image" alt="menu" src="./images/clipboard.jpg" /> -->
@@ -60,6 +61,7 @@ This is my **To-Do API** server following the [Todo List API project on roadmap.
     - [PUT /todos/:id](#put-todosid)
     - [DELETE /todos/:id](#delete-todosid)
     - [GET /todos/](#get-todos)
+- [To-Dos](#to-dos)
 
 
 ## Requirements
@@ -131,7 +133,7 @@ Add new todo.
   * `401 UNAUTHORIZED` if failed to authorize.
   * `201 CREATED` with the created todo as body, which has properties `id` 
     (new todo ID), `title` and `description`.
-    `500 INTERNAL SERVER ERROR` if other errors occur.
+  * `500 INTERNAL SERVER ERROR` if other errors occur.
 
 #### PUT /todos/:id
 
@@ -165,3 +167,12 @@ List todos.
   * `401 UNAUTHORIZED` if failed to authorize.
   * `200 OK` with list of todos found.
 * Example: `GET /todos/?page=1&limit=10`
+
+## To-Dos
+
+* [ ] Handle errors related to SQL constraints
+* [ ] Add unit tests
+* [ ] Implement filtering and sorting for the to-do list
+* [ ] Implement rate limiting and throttling for the API
+* [ ] Implement refresh token mechanism for the authentication
+* [ ] Implement a simple static web client.
