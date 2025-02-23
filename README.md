@@ -1,4 +1,4 @@
-<style>
+<!-- <style>
 h1 {
     text-align: center;
     font-size: xxx-large;
@@ -33,7 +33,7 @@ h1 {
     float: right;
     border-radius: 5%;
 }
-</style>
+</style> -->
 
 <h1>To-Do API</h1>
 
@@ -44,7 +44,7 @@ h1 {
     <img alt="typescript" src="https://img.shields.io/badge/-TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white" />
 </div>
 
-<img class="right-image" alt="menu" src="./images/clipboard.jpg" />
+<!-- <img class="right-image" alt="menu" src="./images/clipboard.jpg" /> -->
 
 This is my **To-Do API** server following the [Todo List API project on roadmap.sh](https://roadmap.sh/projects/todo-list-api).
 
