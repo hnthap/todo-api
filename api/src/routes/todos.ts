@@ -7,7 +7,7 @@ import { authorize401, authorize403 } from "../middlewares/authorization";
  */
 export const todosRoute = express.Router();
 
-todosRoute.post("/", authorize401, TodoController.insertTodo);
-todosRoute.put("/:id", authorize403, TodoController.updateTodo);
-todosRoute.delete("/:id", authorize401, TodoController.deleteTodo);
-todosRoute.get("/", authorize401, TodoController.selectTodo);
+todosRoute.post("/", authorize401, TodoController.insert);
+todosRoute.put("/:id", authorize403, TodoController.update);
+todosRoute.delete("/:id", authorize401, TodoController.delete);
+todosRoute.get("/", authorize401, TodoController.select);

@@ -1,5 +1,5 @@
+import { RequestHandler } from "express";
 import { UserModel } from "../database/user";
-import { Controller } from "../interfaces/controller";
 import { createAccessToken, hashPassword } from "../secure";
 import { StatusCodes } from "../status-codes";
 import { isValidEmail, isValidPassword, isValidUsername } from "../valid";
@@ -7,17 +7,33 @@ import { isValidEmail, isValidPassword, isValidUsername } from "../valid";
 /**
  * Controller for user
  */
-export const UserController: Controller<"login" | "register"> = {
+export const UserController: {
   /**
    * Login as existing user by email and password.
    * Respond 400 BAD REQUEST if email or password is not provided.
    * Respond 401 UNAUTHORIZED if email or password is incorrect.
    * Respond 200 CREATED with an authorization token if success.
-   * @param req 
-   * @param res 
-   * @param next 
-   * @returns 
+   * @param req
+   * @param res
+   * @param next
+   * @returns
    */
+  login: RequestHandler;
+  
+  /**
+   * Register new user with specified "username", "email", "password"
+   * in request body.
+   * Respond 400 BAD REQUEST if name or email or password is not provided,
+   * or is invalid.
+   * Respond 201 CREATED if success.
+   * Respond 500 INTERNAL SERVER ERROR if other errors occured.
+   * @param req
+   * @param res
+   * @param next
+   * @returns
+   */
+  register: RequestHandler;
+} = {
   login: async (req, res, next) => {
     const { email, password } = req.body;
     if (!isValidEmail(email)) {
@@ -48,18 +64,6 @@ export const UserController: Controller<"login" | "register"> = {
     res.status(StatusCodes.CREATED).json({ token });
   },
 
-  /**
-   * Register new user with specified "username", "email", "password"
-   * in request body.
-   * Respond 400 BAD REQUEST if name or email or password is not provided,
-   * or is invalid.
-   * Respond 201 CREATED if success.
-   * Respond 500 INTERNAL SERVER ERROR if other errors occured.
-   * @param req 
-   * @param res 
-   * @param next 
-   * @returns 
-   */
   register: async (req, res, next) => {
     const { name: username, email, password } = req.body;
     if (!isValidUsername(username)) {
