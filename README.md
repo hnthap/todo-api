@@ -90,6 +90,8 @@ Then run:
 docker-compose up --build --detach
 ```
 
+The server will serve at `http://localhost:8000`.
+
 ## API Menu
 
 ### Register
