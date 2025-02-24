@@ -80,10 +80,11 @@ Then, add a file `db.docker.env` with the content:
 
 ```dotenv
 MYSQL_HOST=db
+MYSQL_DATABASE=todos
 MYSQL_USER=<replace this with the actual username>
 MYSQL_PASSWORD=<replace this with the actual password>
 MYSQL_ROOT_PASSWORD=<replace this with the actual root password>
-MYSQL_DATABASE=<replace this with the actual database name>
+MYSQL_DATABASE=todos
 ```
 
 Then run:
